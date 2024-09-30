@@ -1,0 +1,14 @@
+streamlit
+groq
+frontend
+python-dotenv
+crewai
+crewai[tools]
+loguru
+langchain-groq
+fitz
+tools
+PyMuPDF
+sentence-transformers
+fpdf
+Faker

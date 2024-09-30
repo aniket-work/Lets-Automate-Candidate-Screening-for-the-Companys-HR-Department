@@ -1,0 +1,23 @@
+{
+  "software_engineer": {
+    "skills": ["Python", "JavaScript", "SQL", "Git", "Cloud platforms (AWS/Azure/GCP)"],
+    "experience": "3-5 years in software development",
+    "education": "Bachelor's degree in Computer Science or related field",
+    "projects": ["Developed scalable web applications", "Implemented CI/CD pipelines", "Optimized database queries for performance"],
+    "soft_skills": ["Problem-solving", "Team collaboration", "Communication"]
+  },
+  "data_scientist": {
+    "skills": ["Python", "R", "Machine Learning", "SQL", "Data Visualization"],
+    "experience": "2-4 years in data analysis or related field",
+    "education": "Master's degree in Data Science, Statistics, or related field",
+    "projects": ["Developed predictive models", "Performed A/B testing", "Created data pipelines for big data processing"],
+    "soft_skills": ["Analytical thinking", "Attention to detail", "Presentation skills"]
+  },
+  "product_manager": {
+    "skills": ["Product strategy", "Agile methodologies", "User research", "Data analysis"],
+    "experience": "4-6 years in product management or related role",
+    "education": "Bachelor's degree in Business, Computer Science, or related field",
+    "projects": ["Led product launches", "Conducted market research", "Developed product roadmaps"],
+    "soft_skills": ["Leadership", "Communication", "Stakeholder management"]
+  }
+}
