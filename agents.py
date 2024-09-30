@@ -6,6 +6,10 @@ from langchain.tools import Tool
 with open('job_requirements_db.json', 'r') as f:
     job_requirements_db = json.load(f)
 
+# Load the AI agent guidelines
+with open('ai_agent_guideline/guide.json', 'r') as f:
+    agent_guidelines = json.load(f)['ai_agent_guideline']
+
 
 def search_job_requirements(job_title):
     """
@@ -28,22 +32,22 @@ job_search_tool = Tool(
 
 def agents(llm):
     job_requirements_researcher = Agent(
-        role='Job Requirements Research Analyst',
-        goal='Provide up-to-date analysis of industry job requirements for the specified position',
-        backstory='An expert analyst with deep knowledge of various job roles and their requirements.',
+        role=agent_guidelines['job_requirements_researcher']['role'],
+        goal=agent_guidelines['job_requirements_researcher']['goal'],
+        backstory=agent_guidelines['job_requirements_researcher']['backstory'],
         tools=[job_search_tool],  # Use the Tool object here
-        verbose=True,
+        verbose=agent_guidelines['job_requirements_researcher']['verbose'],
         llm=llm,
-        max_iters=1
+        max_iters=agent_guidelines['job_requirements_researcher']['max_iters']
     )
 
     resume_analyser = Agent(
-        role='Resume Analyser',
-        goal='Perform a SWOT Analysis on the Resume based on the industry Job Requirements report from job_requirements_researcher and provide a json report.',
-        backstory='An expert in hiring with a great understanding of resumes and job market trends',
-        verbose=True,
+        role=agent_guidelines['resume_analyser']['role'],
+        goal=agent_guidelines['resume_analyser']['goal'],
+        backstory=agent_guidelines['resume_analyser']['backstory'],
+        verbose=agent_guidelines['resume_analyser']['verbose'],
         llm=llm,
-        max_iters=1,
-        allow_delegation=True
+        max_iters=agent_guidelines['resume_analyser']['max_iters'],
+        allow_delegation=agent_guidelines['resume_analyser']['allow_delegation']
     )
     return job_requirements_researcher, resume_analyser

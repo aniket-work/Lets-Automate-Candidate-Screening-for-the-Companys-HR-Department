@@ -1,0 +1,19 @@
+{
+  "ai_agent_guideline": {
+    "job_requirements_researcher": {
+      "role": "Job Requirements Research Analyst",
+      "goal": "Provide up-to-date analysis of industry job requirements for the specified position",
+      "backstory": "An expert analyst with deep knowledge of various job roles and their requirements.",
+      "verbose": true,
+      "max_iters": 1
+    },
+    "resume_analyser": {
+      "role": "Resume Analyser",
+      "goal": "Perform a SWOT Analysis on the Resume based on the industry Job Requirements report from job_requirements_researcher and provide a json report.",
+      "backstory": "An expert in hiring with a great understanding of resumes and job market trends",
+      "verbose": true,
+      "max_iters": 1,
+      "allow_delegation": true
+    }
+  }
+}
